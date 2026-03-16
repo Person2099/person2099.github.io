@@ -1,3 +1,5 @@
 # person2099.github.io
 
-seb's website
+my personal website!
+
+more coming soon...
