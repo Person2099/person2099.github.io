@@ -1,0 +1,25 @@
+{
+  "name": "person2099.github.io",
+  "version": "1.0.0",
+  "description": "my personal website!",
+  "scripts": {
+    "dev": "http-server . -p 5173 -c-1",
+    "start": "http-server . -p 5173 -c-1",
+    "build": "rm -rf dist && mkdir -p dist && rsync -a --exclude 'dist' --exclude 'node_modules' --exclude '.git' --exclude '.github' --exclude '.gitignore' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'README.md' --exclude 'LICENSE' ./ dist/",
+    "preview": "http-server dist -p 4173 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Person2099/person2099.github.io.git"
+  },
+  "keywords": [],
+  "author": "Sebastian Keet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Person2099/person2099.github.io/issues"
+  },
+  "homepage": "https://github.com/Person2099/person2099.github.io#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
