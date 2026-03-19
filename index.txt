@@ -66,7 +66,7 @@ Experience
 
 Specialist - Apple
 2024 — Present
-Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.
+Providing product support, troubleshooting devices, and delivering solutions across Apple platforms while working in a fast-paced team environment.
 
 Store Supervisor — Officeworks
 2023 — 2024
@@ -79,6 +79,13 @@ Supported technology sales, maintained demo devices, and helped customers choose
 Technical Support (Community & Personal Projects)
 2019 — Present
 Providing hardware and software support, repairing devices, and assisting users online with macOS, Windows, and Linux issues.
+
+Skills
+
+Programming - 85%
+Cloud / Systems - 80%
+IT Support / Troubleshooting - 90%
+Web Development - 75%
 
 # portfolio
 
