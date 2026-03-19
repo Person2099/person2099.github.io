@@ -1,0 +1,127 @@
+vCard - Personal Portfolio
+
+# sidebar
+
+alt = Sebastian Keet
+Sebastian Keet
+Student - Full Stack Developer
+
+Show Contacts
+
+Email
+developer_2099@icloud.com
+
+Location
+Melbourne, Victoria, Australia
+
+# navbar
+
+About
+Resume
+Portfolio
+Contact
+
+# about
+
+About me
+I'm a Computer Science student based in Melbourne, Australia, with a strong interest in technology, systems, and problem solving. I enjoy working across both software and hardware, from building applications to troubleshooting real-world technical issues.
+
+I spend a lot of time experimenting with different technologies, whether that's writing small apps, automating tasks, or troubleshooting hardware and operating systems. I've worked with macOS, Windows, Linux, and mobile platforms, and I enjoy learning how large systems are designed, supported, and improved over time.
+
+I like working on practical projects, including mobile applications, automation scripts, and hardware repairs, and I'm always looking for opportunities to expand my technical skills and take on new challenges. My goal is to build a career in technology where I can contribute to systems that have real impact on people's everyday lives.
+
+Right now I'm especially interested in cloud, networking, and backend systems, and I'm always looking for new projects to learn from.
+
+## service
+
+What i'm doing
+
+alt = study icon
+Computer Science Student
+Studying Computer Science at Monash University with a focus on systems, cloud technologies, and software development.
+
+alt = Web development icon
+Web Development
+Building modern, responsive websites using full-stack technologies with a focus on performance, usability, and clean design.
+
+alt = mobile app icon
+Mobile Applications
+Developing iOS and small cross-platform applications, including projects published on the App Store.
+
+alt = terminal icon
+IT Support & Systems
+Experience with Windows, macOS, Linux, device troubleshooting, scripting, and learning cloud & infrastructure technologies.
+
+# resume
+
+Resume
+
+Education
+
+Monash University — Bachelor of Computer Science
+2024 — 2026
+Studying software development, algorithms, systems, and databases, with interest in cloud, networking, and service reliability.
+
+Experience
+
+Specialist - Apple
+2024 — Present
+Providing product support, troubleshooting devices, and delivering solutions across Apple platforms while working in a fast-paced team environment.
+
+Store Supervisor — Officeworks
+2023 — 2024
+Led daily operations, resolved customer and technical issues, and supervised team performance in a high-volume retail environment.
+
+Retail Assistant / Apple Champion+ — Officeworks
+2021 — 2024
+Supported technology sales, maintained demo devices, and helped customers choose and set up computers, tablets, and phones.
+
+Technical Support (Community & Personal Projects)
+2019 — Present
+Providing hardware and software support, repairing devices, and assisting users online with macOS, Windows, and Linux issues.
+
+Skills
+
+Programming - 85%
+Cloud / Systems - 80%
+IT Support / Troubleshooting - 90%
+Web Development - 75%
+
+# portfolio
+
+Portfolio
+
+All
+Web
+Applications
+Systems
+
+Select category
+All
+Web
+Applications
+Systems
+
+alt = pong
+Simplistic Pong
+Application
+
+alt = http app
+HTTP/S Responses
+Application
+
+alt = portfolio site
+Personal Website
+Web
+
+# contact
+
+Contact
+
+Contact Form
+
+Full name
+Email address
+Your Message
+
+Send Message

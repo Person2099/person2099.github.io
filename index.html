@@ -1,586 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="robots" content="noindex, nofollow" >
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/script.js"></script>
-    <script src="js/top_bar.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Elymaic&family=Poetsen+One&family=Reddit+Mono:wght@200..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/collections.css">
-    <link rel="stylesheet" href="css/collections2.css">
-    <link rel="stylesheet" href="css/promotions.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/top_bar.css">
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-    <title>The Craze Cave</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.webp">
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
-<!-- ============================================ -->
-<!--                 Navigation                   -->
-<!-- ============================================ -->
-
-<header id="cs-navigation">
-    <div class="cs-container">
-        <!--Nav Logo-->
-        <!--Logo is turned white in the css with a filter on dark mode-->
-        <a href="" class="cs-logo" aria-label="back to home">
-            <img src="assets/img/Craze_Cave_Logo_720x.png" alt="logo" width="310" height="100" aria-hidden="true" decoding="async">
-        </a>
-
-        <!--Navigation List-->
-        <nav class="cs-nav" role="navigation">
-            <!--Mobile Nav Toggle-->
-            <button class="cs-toggle" aria-label="mobile menu toggle">
-                <div class="cs-box" aria-hidden="true">
-                    <span class="cs-line cs-line1" aria-hidden="true"></span>
-                    <span class="cs-line cs-line2" aria-hidden="true"></span>
-                    <span class="cs-line cs-line3" aria-hidden="true"></span>
-                </div>
-            </button>
-            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-            <div class="cs-ul-wrapper">
-                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                    <li>
-                        <form id="form" role="search">
-                            <input type="text" id="search-item" name=""
-                                placeholder="Search..."
-                                aria-label="Search through site content"
-                                onkeyup="search()">
-                            <button><img class="img searchImg" src="assets/img/search-svgrepo-com.svg" alt="Search Icon"></button>
-                        </form>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link cs-active">
-                            Home
-                        </a>
-                    <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
-                    <li class="cs-li cs-dropdown" tabindex="0">
-                        <span class="cs-li-link">
-                            Products
-                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                        </span>
-                        <ul class="cs-drop-ul">
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Early Learners</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Fidget Toys</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Brain Power</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Tactile Play</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Visual Input</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Tangles</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Puzzles</a>
-                            </li>
-                        </ul>
-                    </li>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link">
-                            About Us
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="cs-contact-group">
-            <div class="cs-social">
-                <a href="" class="cs-social-link">
-                    <img class="cs-social-icon" src="assets/img/person-svgrepo-com.svg" alt="profile icon" width="12" height="12" aria-hidden="true" decoding="async">
-                </a>
-                <a href="" class="cs-social-link">
-                    <img class="cs-social-icon" src="assets/img/shopping-cart-svgrepo-com.svg" alt="shopping cart icon" width="12" height="12" aria-hidden="true" decoding="async">
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
 
 <body>
 
-    <!-- ============================================ -->
-    <!--                 Promotions                   -->
-    <!-- ============================================ -->
+  <!--
+    - #MAIN
+  -->
 
-    <section id="promotions-1567">
-        <div class="cs-container">
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <picture class="cs-background">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="assets/img/childrenPlaying.jpg">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="assets/img/childrenPlaying.jpg">
-                        <img loading="lazy" decoding="async" src="assets/img/childrenPlaying.jpg" alt="children playing" width="630" height="354">
-                    </picture>
-                    <div class="cs-content">
-                        <span class="cs-tag">New Arrivals</span>
-                        <h2 class="cs-h2">Check Out Our New Arrivals Now!</h2>
-                        <a href="" class="cs-button-solid">Shop Now</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                  Collection                  -->
-    <!-- ============================================ -->
+  <main>
 
     <!--
-        To add a 4th or 5th collection or more, copy and paste the cs-button and change it's data-filter to the next number, in this case it's 4. Do the same to the cs-listing and its data-category number. And that's it!
+      - #SIDEBAR
     -->
 
-    <section id="collection-1602">
-        <div class="cs-container">
-            <div class="cs-content">
-                <h2 class="cs-title">Discounted Prices</h2>
-                <div class="cs-button-group">
-                    <button class="cs-button" data-filter="all">
-                        All
-                    </button>
-                    <button class="cs-button" data-filter="onSale">
-                        On Sale
-                    </button>
-                </div>
-            </div>
-            <div class="cs-listing-wrapper">
-                <!--Listing All-->
-                <div class="cs-listing" data-category="all" id="productList">
-                    <div class="cs-item">
-                        <a href="" class="cs-link">
-                            <div class="cs-picture-group">
-                                <picture class="cs-picture">
-                                    <source media="(max-width: 600px)"
-                                            srcset="assets/productImages/ColourPuzzleCylinder.webp">
-                                    <source media="(min-width: 601px)"
-                                            srcset="assets/productImages/ColourPuzzleCylinder.webp">
-                                    <img loading="lazy" decoding="async"
-                                            src="assets/productImages/ColourPuzzleCylinder.webp"
-                                            alt="Colour Puzzle Cylinder Product Image" width="305" height="400">
-                                </picture>
-                                <span class="cs-offer">-10%</span>
-                            </div>
-                            <div class="cs-details">
-                                <span class="cs-category">Rotating puzzle toy</span>
-                                <h3 class="cs-name">Colour Puzzle Cylinder</h3>
-                                <div class="cs-actions">
-                                    <div class="cs-flex">
-                                        <span class="cs-price">$10.80</span>
-                                        <span class="cs-was-price">$12.00</span>
-                                        <div class="cs-stars">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                        </div>
-                                    </div>
-                                    <button class="cs-buy">
-                                        <img class="cs-basket"
-                                                src="assets/img/add-to-cart-svgrepo-com.svg"
-                                                alt="add to cart" height="24" width="24" loading="lazy" decoding="async">
-                                    </button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cs-item">
-                        <a href="" class="cs-link">
-                            <div class="cs-picture-group">
-                                <picture class="cs-picture">
-                                    <source media="(max-width: 600px)"
-                                            srcset="assets/productImages/retroSlinkyProduct.webp">
-                                    <source media="(min-width: 601px)"
-                                            srcset="assets/productImages/retroSlinkyProduct.webp">
-                                    <img loading="lazy" decoding="async"
-                                            src="assets/productImages/retroSlinkyProduct.webp"
-                                            alt="Retro Slinky Product Image" width="305" height="400">
-                                </picture>
-                                
-                            </div>
-                            <div class="cs-details">
-                                <span class="cs-category">Super flexible retro magic spring</span>
-                                <h3 class="cs-name">Retro Slinky</h3>
-                                <div class="cs-actions">
-                                    <div class="cs-flex">
-                                        <span class="cs-price">$3.95</span>
-                                        
-                                        <div class="cs-stars">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                        </div>
-                                    </div>
-                                    <button class="cs-buy">
-                                        <img src="assets/img/add-to-cart-svgrepo-com.svg"
-                                                alt="add to cart" height="24" width="24" loading="lazy" decoding="async">
-                                    </button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cs-item">
-                        <a href="" class="cs-link">
-                            <div class="cs-picture-group">
-                                <picture class="cs-picture">
-                                    <source media="(max-width: 600px)"
-                                            srcset="assets/productImages/SmooshosJumboPetsProduct.webp">
-                                    <source media="(min-width: 601px)"
-                                            srcset="assets/productImages/SmooshosJumboPetsProduct.webp">
-                                    <img loading="lazy" decoding="async"
-                                            src="assets/productImages/SmooshosJumboPetsProduct.webp"
-                                            alt="Smoosho's Jumbo Pets Product Image" width="305" height="400">
-                                </picture>
-                                <span class="cs-offer">-20%</span>
-                            </div>
-                            <div class="cs-details">
-                                <span class="cs-category">Supersized fun</span>
-                                <h3 class="cs-name">Smoosho's Jumbo Pets Squishy Ball</h3>
-                                <div class="cs-actions">
-                                    <div class="cs-flex">
-                                        <span class="cs-price">$11.95</span>
-                                        <span class="cs-was-price">$14.95</span>
-                                        <div class="cs-stars">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                        </div>
-                                    </div>
-                                    <button class="cs-buy">
-                                        <img src="assets/img/add-to-cart-svgrepo-com.svg"
-                                                alt="Add to Cart" height="24" width="24" loading="lazy" decoding="async">
-                                    </button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cs-item">
-                        <a href="" class="cs-link">
-                            <div class="cs-picture-group">
-                                <picture class="cs-picture">
-                                    <source media="(max-width: 600px)"
-                                            srcset="assets/productImages/SmooshosPetsProduct.webp">
-                                    <source media="(min-width: 601px)"
-                                            srcset="assets/productImages/SmooshosPetsProduct.webp">
-                                    <img loading="lazy" decoding="async"
-                                            src="assets/productImages/SmooshosPetsProduct.webp"
-                                            alt="Smoosho's Pets Product Image" width="305" height="400">
-                                </picture>
-                            </div>
-                            <div class="cs-details">
-                                <span class="cs-category">Super soft and stretchy</span>
-                                <h3 class="cs-name">Smoosho's Pets</h3>
-                                <div class="cs-actions">
-                                    <div class="cs-flex">
-                                        <span class="cs-price">$5.95</span>
-                                        <div class="cs-stars">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                        </div>
-                                    </div>
-                                    <button class="cs-buy">
-                                        <img src="assets/img/add-to-cart-svgrepo-com.svg"
-                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
-                                    </button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cs-item">
-                        <a href="" class="cs-link">
-                            <div class="cs-picture-group">
-                                <picture class="cs-picture">
-                                    <source media="(max-width: 600px)"
-                                            srcset="assets/productImages/SquishvilleVehicleProduct.webp">
-                                    <source media="(min-width: 601px)"
-                                            srcset="assets/productImages/SquishvilleVehicleProduct.webp">
-                                    <img loading="lazy" decoding="async"
-                                            src="assets/productImages/SquishvilleVehicleProduct.webp"
-                                            alt="Squishville Vehicle Product Image" width="305" height="400">
-                                </picture>
-                                <span class="cs-offer">-10%</span>
-                            </div>
-                            <div class="cs-details">
-                                <span class="cs-category">Super cute new addition to our Squishmallow collection</span>
-                                <h3 class="cs-name">Squishville Vehicle</h3>
-                                <div class="cs-actions">
-                                    <div class="cs-flex">
-                                        <span class="cs-price">$9.95</span>
-                                        <span class="cs-was-price">$10.95</span>
-                                        <div class="cs-stars">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                        </div>
-                                    </div>
-                                    <button class="cs-buy">
-                                        <img src="assets/img/add-to-cart-svgrepo-com.svg"
-                                                alt="add to cart" height="24" width="24" loading="lazy" decoding="async">
-                                    </button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="cs-item">
-                        <a href="" class="cs-link">
-                            <div class="cs-picture-group">
-                                <picture class="cs-picture">
-                                    <source media="(max-width: 600px)"
-                                            srcset="assets/productImages/stretchCatProduct.webp">
-                                    <source media="(min-width: 601px)"
-                                            srcset="assets/productImages/stretchCatProduct.webp">
-                                    <img loading="lazy" decoding="async"
-                                            src="assets/productImages/stretchCatProduct.webp"
-                                            alt="Stretch Cat Product Image" width="305" height="400">
-                                </picture>
-                            </div>
-                            <div class="cs-details">
-                                <span class="cs-category">Stretch, squeeze and pull this super cute and colourful Cat</span>
-                                <h3 class="cs-name">Stretch Cat</h3>
-                                <div class="cs-actions">
-                                    <div class="cs-flex">
-                                        <span class="cs-price">$5.95</span>
-                                        <div class="cs-stars">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                            <img class="cs-star"
-                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
-                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
-                                        </div>
-                                    </div>
-                                    <button class="cs-buy">
-                                        <img src="assets/img/add-to-cart-svgrepo-com.svg"
-                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
-                                    </button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Sebastian Keet" width="80" style="transform: translate(7.5%, 5%);">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Sebastian Keet">Sebastian Keet</h1>
+
+          <p class="title">Student - Full Stack Developer</p>
         </div>
-    </section>
-    
-    <!-- ============================================ -->
-    <!--                 Collection 2                 -->
-    <!-- ============================================ -->
 
-    <section id="collection-1577">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Categories</span>
-                <h2 class="cs-title">Shop By Age</h2>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
             </div>
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <a href="" class="cs-link">
-                        <span class="cs-category">Babies (1-2)</span>
-                        <picture class="cs-background" aria-hidden="true">
-                            <source media="(max-width: 600px)"
-                                    srcset="assets/categoryImages/babiesCategory.jpg">
-                            <source media="(min-width: 601px)"
-                                    srcset="assets/categoryImages/babiesCategory.jpg">
-                            <img loading="lazy" decoding="async"
-                                    src="assets/categoryImages/babiesCategory.jpg"
-                                    width="365" height="201" alt="babies playing">
-                        </picture>
-                    </a>
-                </li>
-                <li class="cs-item">
-                    <a href="" class="cs-link">
-                        <span class="cs-category">Toddlers (3-5)</span>
-                        <picture class="cs-background" aria-hidden="true">
-                            <source media="(max-width: 600px)"
-                                    srcset="assets/categoryImages/toddlersCategory.jpg">
-                            <source media="(min-width: 601px)"
-                                    srcset="assets/categoryImages/toddlersCategory.jpg">
-                            <img loading="lazy" decoding="async"
-                                    src="assets/categoryImages/toddlersCategory.jpg" width="365"
-                                    height="201" alt="toddlers playing">
-                        </picture>
-                    </a>
-                </li>
-                <li class="cs-item">
-                    <a href="" class="cs-link">
-                        <span class="cs-category">Young Children (5-10)</span>
-                        <picture class="cs-background" aria-hidden="true">
-                            <source media="(max-width: 600px)"
-                                    srcset="assets/categoryImages/youngChildrenCategory.jpg">
-                            <source media="(min-width: 601px)"
-                                    srcset="assets/categoryImages/youngChildrenCategory.jpg">
-                            <img loading="lazy" decoding="async"
-                                    src="assets/categoryImages/youngChildrenCategory.jpg"
-                                    width="365" height="201" alt="young children palying">
-                        </picture>
-                    </a>
-                </li>
-                <li class="cs-item">
-                    <a href="" class="cs-link">
-                        <span class="cs-category">Kids (10+)</span>
-                        <picture class="cs-background" aria-hidden="true">
-                            <source media="(max-width: 600px)"
-                                    srcset="assets/categoryImages/kidsCategoy.jpg">
-                            <source media="(min-width: 601px)"
-                                    srcset="assets/categoryImages/kidsCategoy.jpg">
-                            <img loading="lazy" decoding="async"
-                                    src="assets/categoryImages/kidsCategoy.jpg"
-                                    width="365" height="201" alt="kids playing">
-                        </picture>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>                        
-</body>
 
-<!-- ============================================ -->
-<!--                   Footer                     -->
-<!-- ============================================ -->
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
 
-<footer id="cs-footer-269">
-    <div class="cs-container">
-        <!-- Logo Group -->
-        <div class="cs-logo-group">
-            <a aria-label="go back to home" class="cs-logo" href="">
-                <img class="cs-logo-img light" aria-hidden="true" loading="lazy" decoding="async" src="assets/img/Craze_Cave_Logo_720x.png" alt="logo" width="240" height="32">
+              <a href="mailto:developer_2099@icloud.com" class="contact-link">developer_2099@icloud.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Melbourne, Victoria, Australia</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com/Person2099" target="_blank" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
-            <p class="cs-text">
-                Here at The Craze Cave we decided that there was a need for easy access to sensory, educational and all things in craze.  You will find squishies, fidgets, collectables and anything new that becomes a new craze.
-            </p>
-        </div>
-        <!-- Links -->
-        <ul class="cs-nav">
-            <li class="cs-nav-li">
-                <span class="cs-header">Sitemap</span>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="">Home</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="">Products</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="">About Us</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="">Contact</a>
-            </li>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/846927211" target="_blank" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
         </ul>
-        <!-- Contact Info -->
-        <ul class="cs-contact">
-            <li class="cs-nav-li">
-                <span class="cs-header">Contact</span>
-            </li>
-            <li class="cs-contact-li">
-                <a class="cs-contact-link" href="mailto:info@thecrazecave.com.au">info@thecrazecave.com.au</a>
-            </li>
-            <!-- Social Media -->
-            <li class="cs-contact-li cs-social-group">
-                <div class="cs-social">
-                    <a class="cs-social-link" aria-label="visit google profile" href="">
-                        <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Social/google.svg" alt="google" width="11" height="11">
-                    </a>
-                    <a class="cs-social-link" aria-label="visit facebook profile" href="">
-                        <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Social/Facebook.svg" alt="facebook" width="6" height="11">
-                    </a>
-                    <a class="cs-social-link" aria-label="visit instagram profile" href="">
-                        <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Social/instagram.svg" alt="instagram" width="11" height="11">
-                    </a>
-                </div>
-            </li>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
         </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm a Computer Science student based in Melbourne, Australia, with a strong interest in technology, systems, and problem solving.
+            I enjoy working across both software and hardware, from building applications to troubleshooting real-world technical issues.
+          </p>
+
+          <p>
+            I spend a lot of time experimenting with different technologies, whether that's writing small apps, automating tasks, or troubleshooting hardware and operating systems.
+            I've worked with macOS, Windows, Linux, and mobile platforms, and I enjoy learning how large systems are designed, supported, and improved over time.
+          </p>
+
+          <p>
+            I like working on practical projects, including mobile applications, automation scripts, and hardware repairs, and I'm always looking for opportunities to expand my technical skills and take on new challenges. My goal is to build a career in technology where I can contribute to systems that have real impact on people's everyday lives.
+          </p>
+
+          <p>
+            Right now I'm especially interested in cloud, networking, and backend systems, and I'm always looking for new projects to learn from.
+          </p>
+        </section>
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-study.svg" alt="study icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Computer Science Student</h4>
+
+                <p class="service-item-text">
+                  Studying Computer Science at Monash University with a focus on systems, cloud technologies, and software development.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-web.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web Development</h4>
+
+                <p class="service-item-text">
+                  Building modern, responsive websites using full-stack technologies with a focus on performance, usability, and clean design.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-mobile.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile Applications</h4>
+
+                <p class="service-item-text">
+                  Developing iOS and small cross-platform applications, including projects published on the App Store.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-terminal.svg" alt="terminal icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">IT Support & Systems</h4>
+
+                <p class="service-item-text">
+                  Experience with Windows, macOS, Linux, device troubleshooting, scripting, and learning cloud & infrastructure technologies.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+      </article>
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Monash University - Clayton</h4>
+              
+              <h5 class="h5 timeline-item-subtitle">Bachelor of Computer Science</h5>
+
+              <span>2024-2026</span>
+
+              <p class="timeline-text">
+                Studying software development, algorithms, systems, and databases, with interest in cloud, networking, and service reliability.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Apple</h4>
+
+              <h5 class="h5 timeline-item-subtitle">Specialist</h5>
+
+              <span>2024 — Present</span>
+
+              <p class="timeline-text">
+                Providing product support, troubleshooting devices, and delivering solutions across Apple platforms while working in a fast-paced team environment.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Officeworks</h4>
+
+              <h5 class="h5 timeline-item-subtitle">Store Supervisor</h5>
+
+              <span>2023 — 2024</span>
+
+              <p class="timeline-text">
+                Led daily operations, resolved customer and technical issues, and supervised team performance in a high-volume retail environment.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Officeworks</h4>
+
+              <h5 class="h5 timeline-item-subtitle">Retail Assistant / Apple Champion+</h5>
+
+              <span>2021 - 2024</span>
+
+              <p class="timeline-text">
+                Supported technology sales, maintained demo devices, and helped customers choose and set up computers, tablets, and phones.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Community & Personal Projects</h4>
+
+              <h5 class="h5 timeline-item-subtitle">Technical Support</h5>
+
+              <span>2019 - Present</span>
+
+              <p class="timeline-text">
+                Providing hardware and software support, repairing devices, and assisting users online with macOS, Windows, and Linux issues.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Programming</h5>
+                <data value="85">85%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Cloud / Systems</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">IT Support / Troubleshooting</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web Development</h5>
+                <data value="75">75%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Systems</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Systems</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="https://github.com/Person2099/HTTPS-Responses">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-1.jpg" alt="http app" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">HTTP/S Responses</h3>
+
+                <p class="project-category">Application</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="https://github.com/Person2099/Simplistic-Pong">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.jpg" alt="pong app" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Simplistic Pong</h3>
+
+                <p class="project-category">Application</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web">
+              <a href="https://github.com/Person2099/person2099.github.io">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.png" alt="portfolio site" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Personal Website</h3>
+
+                <p class="project-category">Web</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps?q=Melbourne,%20Victoria,%20Australia&z=11&output=embed"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
     </div>
-</footer>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
 
 </html>
