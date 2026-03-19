@@ -110,6 +110,12 @@
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 
+  /**
+   * timeline alignment
+   */
+
+  --timeline-axis-left: -30px;
+
 }
 
 
@@ -799,17 +805,34 @@ main {
   margin-bottom: 7px;
 }
 
+.timeline-item-subtitle {
+  font-size: var(--fs-7);
+  line-height: 1.3;
+  margin-top: -5px;
+  margin-bottom: 7px;
+}
+
 .timeline-list span {
   color: var(--muted-teal);
   font-weight: var(--fw-400);
   line-height: 1.6;
 }
 
+.timeline-item:only-child::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: var(--timeline-axis-left);
+  width: 1px;
+  height: 30px;
+  background: var(--jet);
+}
+
 .timeline-item:not(:last-child)::before {
   content: "";
   position: absolute;
   top: -25px;
-  left: -30px;
+  left: var(--timeline-axis-left);
   width: 1px;
   height: calc(100% + 50px);
   background: var(--jet);
@@ -819,7 +842,7 @@ main {
   content: "";
   position: absolute;
   top: 5px;
-  left: -33px;
+  left: calc(var(--timeline-axis-left) - 3px);
   height: 6px;
   width: 6px;
   background: var(--text-gradient-green);
@@ -1284,6 +1307,12 @@ textarea.form-input::-webkit-resizer { display: none; }
     --fs-7: 15px;
     --fs-8: 12px;
 
+    /**
+     * timeline alignment
+     */
+
+    --timeline-axis-left: -41px;
+
   }
 
 
@@ -1492,14 +1521,14 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #RESUME
    */
 
-  .timeline-list { margin-left: 65px; }
-
-  .timeline-item:not(:last-child)::before { left: -40px; }
+  .timeline-list {
+    margin-left: 65px;
+  }
 
   .timeline-item::after {
     height: 8px;
     width: 8px;
-    left: -43px;
+    left: calc(var(--timeline-axis-left) - 4px);
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
