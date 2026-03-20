@@ -612,18 +612,24 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" value="https://person2099.github.io/">
+            <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off">
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <label for="contact-name" class="visually-hidden">Full name</label>
+              <input id="contact-name" type="text" name="name" class="form-input" placeholder="Full name" minlength="2" maxlength="80" autocomplete="name" required data-form-input>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <label for="contact-email" class="visually-hidden">Email address</label>
+              <input id="contact-email" type="email" name="email" class="form-input" placeholder="Email address" maxlength="120" autocomplete="email" required data-form-input>
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <label for="contact-message" class="visually-hidden">Your message</label>
+            <textarea id="contact-message" name="message" class="form-input" placeholder="Your Message" minlength="10" maxlength="2000" required data-form-input></textarea>
+            
+            <p class="form-status" data-form-status aria-live="polite"></p>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span data-form-btn-text>Send Message</span>
             </button>
 
           </form>
