@@ -6,7 +6,9 @@
     "dev": "http-server . -p 5173 -c-1",
     "start": "http-server . -p 5173 -c-1",
     "build": "rm -rf dist && mkdir -p dist && rsync -a --exclude 'dist' --exclude 'node_modules' --exclude '.git' --exclude '.github' --exclude '.gitignore' --exclude 'package.json' --exclude 'package-lock.json' --exclude 'README.md' --exclude 'LICENSE' ./ dist/",
-    "preview": "http-server dist -p 4173 -c-1"
+    "preview": "http-server dist -p 4173 -c-1",
+    "update:sitemap": "node scripts/update-sitemap-lastmod.js",
+    "prepare": "simple-git-hooks"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,10 @@
   },
   "homepage": "https://github.com/Person2099/person2099.github.io#readme",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "simple-git-hooks": "^2.13.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run update:sitemap && git add sitemap.xml"
   }
 }
