@@ -8,6 +8,7 @@ more coming soon...
 | Description | Licence | Attribution/URL |
 | ----------- | ------- | --------------- |
 | icons | CC0 License | https://www.svgrepo.com/collection/ui-oval-interface-icons/ |
+| portfolio template | MIT | https://github.com/codewithsadee/vcard-personal-portfolio.git |
 
 ## Colour Pallet
 Jet Black #2A2D34
