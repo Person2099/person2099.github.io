@@ -49,7 +49,7 @@
   --bg-gradient-accent-1: linear-gradient(
     to bottom right,
     var(--accent-light) 0%,
-    #ffc06100 50%
+    hsla(189, 62%, 75%, 0) 50%
   );
   --bg-gradient-accent-2:
     linear-gradient(135deg, var(--accent-dark) 0%, hsla(35, 100%, 68%, 0) 59.86%),
@@ -188,7 +188,7 @@ article {
   width: 100%;
   height: 1px;
   background: var(--jet);
-  margin: 16px 0;
+  margin: 10px 0;
 }
 
 .icon-box {
@@ -247,6 +247,7 @@ article.active {
 
 .h2 {
   font-size: var(--fs-1);
+  font-weight: var(--fw-600);
 }
 
 .h3 {
@@ -265,6 +266,7 @@ article.active {
 .article-title {
   position: relative;
   padding-bottom: 7px;
+  font-weight: var(--fw-600);
 }
 
 .article-title::after {
@@ -590,7 +592,7 @@ main {
 .service-item-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
@@ -1011,7 +1013,7 @@ main {
 }
 
 .select-item button:hover {
-  --eerie-black-2: hsl(240, 2%, 20%);
+  background: hsl(240, 2%, 20%);
 }
 
 .project-list {
@@ -1526,7 +1528,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .separator {
-    margin: 32px 0;
+    margin: 16px 0;
   }
 
   .contacts-list {
@@ -2063,9 +2065,8 @@ textarea.form-input::-webkit-resizer {
   }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    word-break: break-all;
   }
 
   .contact-info :is(.contact-link, time, address) {
@@ -2088,5 +2089,278 @@ textarea.form-input::-webkit-resizer {
 
   .timeline-text {
     max-width: 700px;
+  }
+}
+
+/*-----------------------------------*\
+  #SKILLS TAGS
+\*-----------------------------------*/
+
+.skills-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.skills-tag-item {
+  color: var(--accent-dark);
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  padding: 5px 13px;
+  border-radius: 8px;
+  transition: var(--transition-1);
+  cursor: default;
+}
+
+.skills-tag-item:hover {
+  background: var(--jet);
+  border-color: var(--accent-dark);
+}
+
+/*-----------------------------------*\
+  #TECH STACK
+\*-----------------------------------*/
+
+.tech-stack {
+  margin-bottom: 35px;
+}
+
+.tech-stack-title {
+  margin-bottom: 20px;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 4px 0;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+}
+
+.tech-item img {
+  width: 36px;
+  height: 36px;
+  transition: transform var(--transition-1), filter var(--transition-1);
+  filter: grayscale(0.25);
+}
+
+.tech-item img:hover {
+  filter: grayscale(0);
+  transform: translateY(-3px);
+}
+
+.tech-item span {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+}
+
+/*-----------------------------------*\
+  #SIDEBAR FOOTER
+\*-----------------------------------*/
+
+.sidebar-footer {
+  border-top: 1px solid var(--jet);
+  padding-top: 16px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  50% { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
+}
+
+.availability-label {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  display: block;
+}
+
+.github-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  line-height: 1;
+}
+
+.github-stats-row ion-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.github-stats-link {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  transition: color var(--transition-1);
+}
+
+.github-stats-link:hover {
+  color: var(--light-gray);
+}
+
+/*-----------------------------------*\
+  #PROJECT MODAL
+\*-----------------------------------*/
+
+.project-modal {
+  background: var(--eerie-black-2);
+  position: relative;
+  padding: 20px;
+  margin: 15px 12px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-5);
+  transform: scale(1.2);
+  opacity: 0;
+  transition: var(--transition-1);
+  z-index: 2;
+  width: calc(100% - 24px);
+  max-width: 640px;
+}
+
+.modal-container.active .project-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.project-modal-banner {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: var(--onyx);
+}
+
+.project-modal-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-modal-category {
+  color: var(--accent-dark);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.project-modal-title {
+  margin-bottom: 12px;
+}
+
+.project-modal-desc {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.project-modal-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-modal-tech-list li {
+  color: var(--accent-dark);
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: block;
+}
+
+.project-modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-dark);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--border-gradient-onyx);
+  position: relative;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.project-modal-link::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.project-modal-link:hover {
+  background: var(--bg-gradient-accent-1);
+}
+
+.project-modal-link:hover::before {
+  background: var(--bg-gradient-accent-2);
+}
+
+.project-modal-link ion-icon {
+  font-size: 16px;
+}
+
+@media (min-width: 580px) {
+  .project-modal {
+    padding: 30px;
+  }
+
+  .project-modal-banner {
+    height: 220px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .sidebar-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
