@@ -11,9 +11,13 @@ more coming soon...
 | portfolio template | MIT | https://github.com/codewithsadee/vcard-personal-portfolio.git |
 
 ## Colour Pallet
-Jet Black #2A2D34
-Sea Green #5C946E
-Muted Teal #80C2AF
-Frosted Blue #A0DDE6
-Deep Sky Blue #30C5FF
-https://coolors.co/2b2b2c-2a2d34-30c5ff-a0dde6
+Refined from the original jet-black / sea-green / sky-blue set for a systems/terminal direction.
+
+Ink 950 (page bg) #0F1216
+Ink 900 (panel bg) #161B21
+Hairline (borders) #2E3841
+Mist 100 (primary text) #EAEEF2
+Mist 500 (muted text) #7C8894
+Cyan 400 (primary accent) #3FCBEA — refined from Deep Sky Blue #30C5FF
+Teal 400 (secondary accent) #57C596 — refined from Sea Green #5C946E
+Amber 400 (tertiary accent) #E7AE4E

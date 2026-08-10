@@ -37,7 +37,9 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#0F1216">
 
   <script type="application/ld+json">
     {
@@ -110,6 +112,8 @@
 
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <!--
     - #MAIN
   -->
@@ -122,6 +126,13 @@
 
     <aside class="sidebar" data-sidebar>
 
+      <div class="window-chrome" aria-hidden="true">
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+        <span class="window-title">whoami.sh</span>
+      </div>
+
       <div class="sidebar-info">
 
         <figure class="avatar-box">
@@ -131,11 +142,11 @@
         <div class="info-content">
           <h1 class="name" title="Sebastian Keet">Sebastian Keet</h1>
 
-          <p class="title">Student - Full Stack Developer</p>
+          <p class="title">Student — Full Stack Developer</p>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+        <button class="info_more-btn" data-sidebar-btn aria-expanded="false">
+          <span>Show details</span>
 
           <ion-icon name="chevron-down"></ion-icon>
         </button>
@@ -146,37 +157,24 @@
 
         <div class="separator"></div>
 
-        <ul class="contacts-list">
+        <dl class="info-fields">
 
-          <li class="contact-item">
+          <div class="info-field">
+            <dt><ion-icon name="mail-outline" aria-hidden="true"></ion-icon>email</dt>
+            <dd><a href="mailto:developer_2099@icloud.com" class="contact-link">developer_2099@icloud.com</a></dd>
+          </div>
 
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
+          <div class="info-field">
+            <dt><ion-icon name="location-outline" aria-hidden="true"></ion-icon>location</dt>
+            <dd><address>Melbourne, VIC, Australia</address></dd>
+          </div>
 
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
+          <div class="info-field">
+            <dt><ion-icon name="school-outline" aria-hidden="true"></ion-icon>study</dt>
+            <dd>B. Computer Science, Monash</dd>
+          </div>
 
-              <a href="mailto:developer_2099@icloud.com" class="contact-link">developer_2099@icloud.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Melbourne, Victoria, Australia</address>
-            </div>
-
-          </li>
-
-        </ul>
+        </dl>
 
         <div class="separator"></div>
 
@@ -185,12 +183,14 @@
           <li class="social-item">
             <a href="https://github.com/Person2099" target="_blank" rel="noopener noreferrer" class="social-link">
               <ion-icon name="logo-github"></ion-icon>
+              <span>GitHub</span>
             </a>
           </li>
 
           <li class="social-item">
             <a href="https://www.linkedin.com/in/846927211" target="_blank" rel="noopener noreferrer" class="social-link">
               <ion-icon name="logo-linkedin"></ion-icon>
+              <span>LinkedIn</span>
             </a>
           </li>
 
@@ -206,12 +206,12 @@
         <div class="sidebar-footer">
 
           <div class="availability">
-            <span class="availability-dot"></span>
+            <span class="availability-dot" aria-hidden="true"></span>
             <p class="availability-label">Open to opportunities</p>
           </div>
 
           <div class="github-stats-row">
-            <ion-icon name="logo-github"></ion-icon>
+            <ion-icon name="logo-github" aria-hidden="true"></ion-icon>
             <a href="https://github.com/Person2099" target="_blank" rel="noopener noreferrer" class="github-stats-link">
               <span data-github-repos>—</span> public repos
             </a>
@@ -231,30 +231,30 @@
       - #main-content
     -->
 
-    <div class="main-content">
+    <div class="main-content" id="main-content">
 
       <!--
         - #NAVBAR
       -->
 
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Main navigation">
 
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link data-page-target="about">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link data-page-target="resume">Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link data-page-target="portfolio">Portfolio</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link data-page-target="contact">Contact</button>
           </li>
 
         </ul>
@@ -271,7 +271,13 @@
 
       <article class="about  active" data-page="about">
 
+        <p class="terminal-intro" data-typing>
+          <span class="prompt-user">sebastian@melbourne</span><span class="prompt-sep">:~$</span>
+          <span class="typed-text" data-typed-text="whoami">whoami</span><span class="cursor" aria-hidden="true"></span>
+        </p>
+
         <header>
+          <p class="eyebrow">./about</p>
           <h2 class="h2 article-title">About me</h2>
         </header>
 
@@ -460,6 +466,7 @@
       <article class="resume" data-page="resume">
 
         <header>
+          <p class="eyebrow">./resume</p>
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
@@ -615,6 +622,7 @@
       <article class="portfolio" data-page="portfolio">
 
         <header>
+          <p class="eyebrow">./portfolio</p>
           <h2 class="h2 article-title">Portfolio</h2>
         </header>
 
@@ -623,19 +631,19 @@
           <ul class="filter-list">
 
             <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
+              <button class="active" data-filter-btn data-filter-value="all">All</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web</button>
+              <button data-filter-btn data-filter-value="web">Web</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn data-filter-value="applications">Applications</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Systems</button>
+              <button data-filter-btn data-filter-value="systems">Systems</button>
             </li>
 
           </ul>
@@ -655,19 +663,19 @@
             <ul class="select-list">
 
               <li class="select-item">
-                <button data-select-item>All</button>
+                <button data-select-item data-filter-value="all">All</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web</button>
+                <button data-select-item data-filter-value="web">Web</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item data-filter-value="applications">Applications</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Systems</button>
+                <button data-select-item data-filter-value="systems">Systems</button>
               </li>
 
             </ul>
@@ -798,6 +806,7 @@
       <article class="contact" data-page="contact">
 
         <header>
+          <p class="eyebrow">./contact</p>
           <h2 class="h2 article-title">Contact</h2>
         </header>
 

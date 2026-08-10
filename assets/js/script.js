@@ -81,10 +81,9 @@ for (let i = 0; i < selectItems.length; i++) {
 
     if (!selectValue || !select) return;
 
-    let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     elementToggleFunc(select);
-    filterFunc(selectedValue);
+    filterFunc(this.dataset.filterValue);
 
   });
 }
@@ -117,9 +116,8 @@ for (let i = 0; i < filterBtn.length; i++) {
 
     if (!selectValue || !lastClickedBtn) return;
 
-    let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
+    filterFunc(this.dataset.filterValue);
 
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
@@ -297,8 +295,10 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
+    const target = this.dataset.pageTarget;
+
     for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+      if (target === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
@@ -310,3 +310,30 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+// terminal-style typing intro on the About page — respects reduced motion
+(function typingIntro() {
+  const line = document.querySelector("[data-typing]");
+  const target = document.querySelector("[data-typed-text]");
+  if (!line || !target) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fullText = target.dataset.typedText;
+
+  if (prefersReducedMotion) return;
+
+  target.textContent = "";
+  let i = 0;
+
+  const type = function () {
+    if (i <= fullText.length) {
+      target.textContent = fullText.slice(0, i);
+      i++;
+      setTimeout(type, 90);
+    }
+  };
+
+  type();
+})();
