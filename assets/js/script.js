@@ -204,26 +204,74 @@ if (form) {
 const projectModalContainer = document.querySelector("[data-project-modal-container]");
 const projectOverlay = document.querySelector("[data-project-overlay]");
 const projectModalCloseBtn = document.querySelector("[data-project-modal-close-btn]");
-const projectModalImg = document.querySelector("[data-project-modal-img]");
 const projectModalTitle = document.querySelector("[data-project-modal-title]");
 const projectModalCategory = document.querySelector("[data-project-modal-category]");
 const projectModalDesc = document.querySelector("[data-project-modal-desc]");
 const projectModalTechList = document.querySelector("[data-project-modal-tech]");
 const projectModalLink = document.querySelector("[data-project-modal-link]");
+const projectModalTermPath = document.querySelector("[data-project-modal-term-path]");
+const projectModalTermCmd = document.querySelector("[data-project-modal-term-cmd]");
+const projectModalTermOut = document.querySelector("[data-project-modal-term-out]");
+const projectModalRole = document.querySelector("[data-project-modal-role]");
+const projectModalNote = document.querySelector("[data-project-modal-note]");
+const projectModalStatusDot = document.querySelector("[data-project-modal-status-dot]");
+const projectModalStatusText = document.querySelector("[data-project-modal-status-text]");
+const projectModalPrivatePill = document.querySelector("[data-project-modal-private-pill]");
+const projectModalPrivateText = document.querySelector("[data-project-modal-private-text]");
+const projectModalExtraLinks = document.querySelector("[data-project-modal-extra]");
+
+/**
+ * @param {string} raw - "Label::url;;Label::url" formatted extra links
+ * @returns {{label: string, url: string}[]}
+ */
+function parseProjectLinks(raw) {
+  if (!raw) return [];
+  return raw.split(";;").map((pair) => {
+    const [label, url] = pair.split("::");
+    return { label: (label || "").trim(), url: (url || "").trim() };
+  }).filter((link) => link.label && link.url);
+}
 
 function openProjectModal(item, url) {
   if (!projectModalContainer || !projectOverlay) return;
 
-  const img = item.querySelector(".project-img img");
   const title = item.querySelector(".project-title");
   const category = item.querySelector(".project-category");
+  const termPath = item.querySelector(".term-path");
+  const termCmd = item.querySelector(".term-cmd");
+  const termOut = item.querySelector(".term-out");
   const desc = item.dataset.projectDesc || "";
   const tech = item.dataset.projectTech ? item.dataset.projectTech.split(",") : [];
+  const role = item.dataset.projectRole || "";
+  const status = item.dataset.projectStatus || "";
+  const accent = item.dataset.projectAccent || "var(--mist-500)";
+  const note = item.dataset.projectNote || "";
+  const isPrivate = item.dataset.projectPrivate === "true";
+  const extraLinks = parseProjectLinks(item.dataset.projectLinks);
 
-  if (projectModalImg && img) { projectModalImg.src = img.src; projectModalImg.alt = img.alt; }
   if (projectModalTitle && title) projectModalTitle.textContent = title.textContent;
-  if (projectModalCategory && category) projectModalCategory.textContent = category.textContent;
+  if (projectModalCategory && category) {
+    projectModalCategory.textContent = category.textContent.trim();
+  }
+  if (projectModalTermPath && termPath) projectModalTermPath.textContent = termPath.textContent;
+  if (projectModalTermCmd && termCmd) {
+    projectModalTermCmd.textContent = "";
+    for (const node of termCmd.childNodes) {
+      projectModalTermCmd.appendChild(node.cloneNode(true));
+    }
+  }
+  if (projectModalTermOut && termOut) {
+    projectModalTermOut.textContent = termOut.textContent;
+    projectModalTermOut.className = "term-out " + (termOut.className.replace("term-out", "").trim());
+  }
+  if (projectModalStatusDot) projectModalStatusDot.style.background = accent;
+  if (projectModalStatusText) projectModalStatusText.textContent = status;
+  if (projectModalRole) projectModalRole.textContent = role;
   if (projectModalDesc) projectModalDesc.textContent = desc;
+  if (projectModalNote) {
+    projectModalNote.textContent = note;
+    projectModalNote.hidden = !note;
+  }
   if (projectModalTechList) {
     projectModalTechList.textContent = "";
     for (let t = 0; t < tech.length; t++) {
@@ -232,7 +280,27 @@ function openProjectModal(item, url) {
       projectModalTechList.appendChild(li);
     }
   }
-  if (projectModalLink) projectModalLink.href = url || "#";
+
+  if (projectModalLink) {
+    projectModalLink.href = url || "#";
+    projectModalLink.hidden = isPrivate;
+  }
+  if (projectModalPrivatePill) projectModalPrivatePill.hidden = !isPrivate;
+  if (projectModalPrivateText) projectModalPrivateText.textContent = status || "Private";
+
+  if (projectModalExtraLinks) {
+    projectModalExtraLinks.textContent = "";
+    for (let l = 0; l < extraLinks.length; l++) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = extraLinks[l].url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = extraLinks[l].label;
+      li.appendChild(a);
+      projectModalExtraLinks.appendChild(li);
+    }
+  }
 
   projectModalContainer.classList.add("active");
   projectOverlay.classList.add("active");

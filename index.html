@@ -684,108 +684,242 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="applications"
+            <li class="project-item active" data-filter-item data-category="web"
                 data-project-item
-                data-project-desc="iOS utility app that displays HTTP and HTTPS status codes with descriptions and reference links. Built for quick lookup during web development and API debugging."
-                data-project-tech="Swift,iOS,Xcode">
-              <a href="https://github.com/Person2099/HTTPS-Responses">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="http app" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">HTTP/S Responses</h3>
-
-                <p class="project-category">Application</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications"
-                data-project-item
-                data-project-desc="Classic Pong game implementation with clean minimal graphics and responsive two-player controls."
-                data-project-tech="Swift,Objective-C,GameKit">
-              <a href="https://github.com/Person2099/Simplistic-Pong">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.jpg" alt="pong app" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Simplistic Pong</h3>
-
-                <p class="project-category">Application</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="systems"
-                data-project-item
-                data-project-desc="Self-hosted command center for Bambu Lab 3D printers — no cloud required. Contributed to during my role at Monash Automation to manage a multi-printer farm with an automated print queue adopted by 80+ team members."
-                data-project-tech="Docker,Linux,Self-hosted">
-              <a href="https://github.com/Person2099/bambuddy">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="bambuddy 3D print manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">bambuddy</h3>
-
-                <p class="project-category">Systems</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web"
-                data-project-item
-                data-project-desc="Inventory management system built for student engineering teams. Tracks parts, tools, and consumables across team members with a clean TypeScript frontend and structured data model."
-                data-project-tech="TypeScript,HTML,CSS">
-              <a href="https://github.com/Person2099/inventory-system">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="inventory system" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Inventory System</h3>
-
-                <p class="project-category">Web</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web"
-                data-project-item
-                data-project-desc="Responsive personal portfolio with animated sidebar, tabbed navigation, contact form with AJAX submission, and structured data for SEO."
-                data-project-tech="HTML,CSS,JavaScript">
+                data-project-desc="Personal site and portfolio, hand-built without a framework: animated sidebar, tabbed page navigation, an AJAX contact form, and structured data for SEO. The terminal-and-systems visual language is borrowed straight from the rest of the work on it."
+                data-project-tech="HTML,CSS,JavaScript"
+                data-project-role="Author"
+                data-project-status="Live"
+                data-project-accent="var(--cyan-400)"
+                data-project-note="You're looking at it right now.">
               <a href="https://github.com/Person2099/person2099.github.io">
-
-                <figure class="project-img">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/person2099.github.io</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> curl -sI person2099.github.io | head -1</p>
+                    <p class="term-out term-ok">HTTP/2 200</p>
+                  </div>
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-3.png" alt="portfolio site" loading="lazy">
                 </figure>
-
                 <h3 class="project-title">Personal Website</h3>
+                <p class="project-category"><span class="status-dot status-dot--cyan"></span>Web</p>
+              </a>
+            </li>
 
-                <p class="project-category">Web</p>
+            <li class="project-item active" data-filter-item data-category="web"
+                data-project-item
+                data-project-desc="Full-stack inventory system for a student engineering team, built on React 19, TypeScript, tRPC, and PostgreSQL. Tracks assets and consumables with QR codes, dispatches G-code print jobs straight to Bambu and Prusa printers by IP, and ships an Ollama-backed chat assistant for quick lookups."
+                data-project-tech="React,TypeScript,tRPC,PostgreSQL,TailwindCSS,Docker"
+                data-project-role="Author &amp; maintainer"
+                data-project-status="Active"
+                data-project-accent="var(--teal-400)">
+              <a href="https://github.com/monashautomation/inventory-system">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/inventory-system</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> pnpm build</p>
+                    <p class="term-out term-ok">✓ 1,842 modules · typecheck clean</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Inventory System</h3>
+                <p class="project-category"><span class="status-dot status-dot--teal"></span>Web</p>
+              </a>
+            </li>
 
+            <li class="project-item active" data-filter-item data-category="web"
+                data-project-item
+                data-project-desc="Self-hosted support desk: a Discord bot opens tickets before a user even has a web account, Authentik handles SSO, and admins get SLA due dates, one-click escalation, and live queue metrics. Deploys to Kubernetes via ArgoCD."
+                data-project-tech="TypeScript,PostgreSQL,Discord.js,BetterAuth,Kubernetes,ArgoCD"
+                data-project-role="Author &amp; maintainer"
+                data-project-status="Active"
+                data-project-accent="var(--teal-400)">
+              <a href="https://github.com/monashautomation/ticketing-system">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/ticketing-system</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> /ticket open</p>
+                    <p class="term-out term-ok">→ #482 created · SLA 4h</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Ticketing System</h3>
+                <p class="project-category"><span class="status-dot status-dot--teal"></span>Web</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="systems"
+                data-project-item
+                data-project-desc="Internal people directory that keeps Authentik as the identity source of truth and owns everything it doesn't: Discord ID, student ID, positions, profile photo. Syncs one-way from Authentik every 15 minutes and exposes a read API so the ticketing and inventory systems stop keeping their own copies."
+                data-project-tech="TypeScript,PostgreSQL,Docker,MinIO"
+                data-project-role="Author"
+                data-project-status="Private repository"
+                data-project-accent="var(--amber-400)"
+                data-project-private="true">
+              <a href="#">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/directory-service</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> curl /api/people -H "X-API-Key: ***"</p>
+                    <p class="term-out term-ok">200 · 2 consumers synced</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Directory Service</h3>
+                <p class="project-category"><span class="status-dot status-dot--amber"></span>Systems</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="systems"
+                data-project-item
+                data-project-desc="Self-hosted command center for Bambu Lab printers, from one A1 to a full farm, no cloud dependency. Ran it to manage Monash Automation's print queue and sent two fixes upstream: exposing a filename-preference flag on the manual archive-upload endpoint, and correcting AMS colour mapping when 3MF metadata is unavailable."
+                data-project-tech="Python,TypeScript,React,Docker"
+                data-project-role="Contributor"
+                data-project-status="2 merged PRs"
+                data-project-accent="var(--teal-400)"
+                data-project-links="PR #2610 — filename flag on archive upload::https://github.com/maziggy/bambuddy/pull/2610;;PR #1440 — AMS colour-mapping fix::https://github.com/maziggy/bambuddy/pull/1440">
+              <a href="https://github.com/maziggy/bambuddy">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/bambuddy</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> git log --author=Person2099 --oneline</p>
+                    <p class="term-out term-ok">#2610 #1440 merged</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">bambuddy</h3>
+                <p class="project-category"><span class="status-dot status-dot--teal"></span>Systems</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="systems"
+                data-project-item
+                data-project-desc="Desk display for an ESP32-S3 AMOLED touch panel that polls a self-hosted status aggregator every 45 seconds and renders it with LVGL. Auto-dims overnight, snaps back to the home screen after idle scrolling, and shows an offline state if the aggregator goes quiet for two minutes."
+                data-project-tech="C++,PlatformIO,LVGL,ESP32-S3"
+                data-project-role="Author"
+                data-project-status="Private, in progress"
+                data-project-accent="var(--amber-400)"
+                data-project-private="true">
+              <a href="#">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/status-orb-firmware</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> pio run -t upload &amp;&amp; pio device monitor</p>
+                    <p class="term-out term-ok">wifi ok · poll 45s · night-dim 23:00</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">ESP32-S3 Status Orb</h3>
+                <p class="project-category"><span class="status-dot status-dot--amber"></span>Systems</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications"
+                data-project-item
+                data-project-desc="iOS utility that surfaces the numbers Settings hides: GPS coordinates, resolved IP, battery health, processor load, and storage breakdown, each in its own view. Built for quick hardware triage without digging through menus."
+                data-project-tech="Swift,SwiftUI,Xcode"
+                data-project-role="Author"
+                data-project-status="Private, unreleased"
+                data-project-accent="var(--amber-400)"
+                data-project-private="true">
+              <a href="#">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/diagnostics</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> diag --battery --storage</p>
+                    <p class="term-out term-ok">87% · 412GB free</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Diagnostics App</h3>
+                <p class="project-category"><span class="status-dot status-dot--amber"></span>Application</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications"
+                data-project-item
+                data-project-desc="iOS reference app for looking up HTTP and HTTPS status codes on the fly, built with two other students. Ships push notifications via OneSignal and error tracking via Sentry."
+                data-project-tech="Swift,SwiftUIX,Sentry,OneSignal"
+                data-project-role="Co-author (team of 3)"
+                data-project-status="Active"
+                data-project-accent="var(--teal-400)">
+              <a href="https://github.com/Person2099/HTTPS-Responses">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/HTTPS-Responses</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> curl -o /dev/null -w '%{http_code}' /teapot</p>
+                    <p class="term-out term-amber">418</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">HTTP/S Responses</h3>
+                <p class="project-category"><span class="status-dot status-dot--teal"></span>Application</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications"
+                data-project-item
+                data-project-desc="Two-player Pong built in Swift and Objective-C with GameKit, from early iOS days. Archived and made public now — kept around for reference, not under further development."
+                data-project-tech="Swift,Objective-C,GameKit"
+                data-project-role="Author"
+                data-project-status="Archived"
+                data-project-accent="var(--mist-500)">
+              <a href="https://github.com/Person2099/Simplistic-Pong">
+                <figure class="project-term" aria-hidden="true">
+                  <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/Simplistic-Pong</span>
+                  </div>
+                  <div class="term-body">
+                    <p class="term-cmd"><span class="term-prompt">$</span> git log -1 --format=%cd</p>
+                    <p class="term-out term-muted">archived · read-only</p>
+                  </div>
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Simplistic Pong</h3>
+                <p class="project-category"><span class="status-dot status-dot--mist"></span>Application</p>
               </a>
             </li>
 
@@ -866,24 +1000,48 @@
           <ion-icon name="close-outline"></ion-icon>
         </button>
 
-        <figure class="project-modal-banner">
-          <img data-project-modal-img src="" alt="" width="600" height="300">
+        <figure class="project-modal-banner" data-project-modal-banner aria-hidden="true">
+          <div class="term-bar">
+            <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+            <span class="term-path" data-project-modal-term-path></span>
+          </div>
+          <div class="term-body">
+            <p class="term-cmd" data-project-modal-term-cmd></p>
+            <p class="term-out" data-project-modal-term-out></p>
+          </div>
         </figure>
 
         <div class="project-modal-info">
 
-          <p class="project-modal-category" data-project-modal-category></p>
+          <div class="project-modal-meta">
+            <p class="project-modal-category" data-project-modal-category></p>
+            <p class="project-modal-status" data-project-modal-status>
+              <span class="status-dot" data-project-modal-status-dot></span>
+              <span data-project-modal-status-text></span>
+            </p>
+          </div>
 
           <h3 class="h3 project-modal-title" data-project-modal-title></h3>
 
+          <p class="project-modal-role" data-project-modal-role></p>
+
           <p class="project-modal-desc" data-project-modal-desc></p>
+
+          <p class="project-modal-note" data-project-modal-note></p>
 
           <ul class="project-modal-tech-list" data-project-modal-tech></ul>
 
-          <a href="#" target="_blank" rel="noopener noreferrer" class="project-modal-link" data-project-modal-link>
-            <ion-icon name="logo-github"></ion-icon>
-            <span>View on GitHub</span>
-          </a>
+          <div class="project-modal-links">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="project-modal-link" data-project-modal-link>
+              <ion-icon name="logo-github"></ion-icon>
+              <span>View on GitHub</span>
+            </a>
+            <p class="project-modal-private-pill" data-project-modal-private-pill>
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <span data-project-modal-private-text></span>
+            </p>
+            <ul class="project-modal-extra-links" data-project-modal-extra></ul>
+          </div>
 
         </div>
 
